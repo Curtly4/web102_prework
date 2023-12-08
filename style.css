@@ -39,16 +39,16 @@ body {
 #games-container {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-around;
+    justify-content: space-evenly;
 }
 
 .game-img {
-    width: 100%;
+    width: 50%;
     border-radius: 5px;
     box-shadow: 0 0 10px #FFFFFF;
 }
 
-.game-card {
+.game-card {                                            
     background-color: #FFFFFF;
     padding: 1%;
     margin: 1%;
@@ -67,9 +67,20 @@ body {
 }
 
 button {
+    cursor: pointer;
     font-family: 'Cabin';
     border: none;
     padding: 1%;
     margin: 1%;
     border-radius: 7px;
+}
+
+.stats-containers{
+    display: flex;
+    align-items: center;
+}
+
+.stats-container:hover{
+    cursor: pointer;
+    box-shadow: 0 0 30px lightblue;
 }
