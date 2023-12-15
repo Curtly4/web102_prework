@@ -29,7 +29,6 @@ const gamesContainer = document.getElementById("games-container");
 // create a function that adds all data from the games array to the page
 function addGamesToPage(games) {
   // loop over each item in the data
-
   for (let i = 0; i < games.length; i++) {
     const game = games[i];
 
@@ -77,8 +76,10 @@ const contributionsCard = document.getElementById("num-contributions");
 const totalBackers = GAMES_JSON.reduce((acc, games) => {
   return acc + games.backers;
 }, 0);
+
 // set the inner HTML using a template literal and toLocaleString to get a number with commas
 contributionsCard.innerHTML = `${totalBackers.toLocaleString("en-US")}`;
+
 // grab the amount raised card, then use reduce() to find the total amount raised
 const raisedCard = document.getElementById("total-raised");
 
@@ -122,6 +123,7 @@ function filterFundedOnly() {
   let listOfFundedOnly = GAMES_JSON.filter((game) => {
     return game.pledged >= game.goal;
   });
+
   // use the function we previously created to add unfunded games to the DOM
   addGamesToPage(listOfFundedOnly);
 }
@@ -143,6 +145,7 @@ const allBtn = document.getElementById("all-btn");
 unfundedBtn.addEventListener("click", filterUnfundedOnly);
 fundedBtn.addEventListener("click", filterFundedOnly);
 allBtn.addEventListener("click", showAllGames);
+
 /*************************************************************************************
  * Challenge 6: Add more information at the top of the page about the company.
  * Skills used: template literals, ternary operator
@@ -157,13 +160,11 @@ let listOfUnfundedOnly = GAMES_JSON.filter((game) => {
 });
 
 // create a string that explains the number of unfunded games using the ternary operator
-const displayStr = `${listOfUnfundedOnly}`
-  ? `A total of $${totalRaised.toLocaleString(
-      "en-US"
-    )} has been raised for ${totalGames} games. Currently, ${
-      listOfUnfundedOnly.length
-    } games remains unfunded. We need your help to fund these amazing games!`
+const displayStr = `${listOfUnfundedOnly}`? 
+`A total of $${totalRaised.toLocaleString("en-US")} has been raised for ${totalGames} games. 
+  Currently, ${listOfUnfundedOnly.length} games remains unfunded. We need your help to fund these amazing games!`
   : "";
+
 // create a new DOM element containing the template string and append it to the description container
 const description = document.createElement("p");
 description.innerHTML = displayStr;
@@ -183,11 +184,13 @@ const sortedGames = GAMES_JSON.sort((item1, item2) => {
 
 // use destructuring and the spread operator to grab the first and second games.
 let [first, second] = [...sortedGames];
-console.log([first, second]);
+// console.log([first, second]);
+
 // create a new element to hold the name of the top pledge game, then append it to the correct element.
-let topGame  = document.createElement("p");
+let topGame = document.createElement("p");
 topGame = [first.name];
 firstGameContainer.innerHTML += topGame;
+
 // do the same for the runner up item
 let secondGame = document.createElement("p");
 secondGame = [second.name];
