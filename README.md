@@ -26,7 +26,7 @@ Here's a walkthrough of implemented features:
 ![Kapture 2023-12-19 at 21 23 57](https://github.com/Curtly4/web102_prework/assets/58644761/655e8146-2dc9-46f6-b45f-03bd106f2ae5)
 
 <!-- Replace this with whatever GIF tool you used! -->
-GIF created with ...  
+GIF created with getkap.  
 <!-- Recommended tools:
 [Kap](https://getkap.co/) for macOS
 [ScreenToGif](https://www.screentogif.com/) for Windows
